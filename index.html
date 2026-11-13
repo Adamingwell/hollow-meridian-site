@@ -5,17 +5,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Hollow Meridian, a cyberpunk turn-based JRPG from Chaotic Zen Games.">
 <title>Hollow Meridian · Chaotic Zen Games</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=title-screen">
 </head>
 <body>
 <header><a class="brand" href="#top"><b class="mark" aria-hidden="true">◈</b> CHAOTIC ZEN GAMES</a><nav aria-label="Main navigation"><a href="#trailer">Trailer</a><a href="#world">World</a><a href="#combat">Combat</a></nav></header>
 <main id="top">
 <section class="hero" aria-labelledby="title">
-<div class="inner"><p class="eyebrow signal"><i aria-hidden="true"></i> INCOMING TRANSMISSION <span> / </span> HM-001</p>
-<h1 id="title">Hollow<br>Meridian</h1>
-<p class="lead">The machines have turned against us. Follow the signal, find your crew, and discover who set it loose.</p>
-<a class="button" href="#trailer">▶ Decode transmission <span>01:00</span></a><p class="platform">CYBERPUNK JRPG &nbsp; / &nbsp; IN DEVELOPMENT FOR PC</p></div>
-<div class="telemetry"><span>VANTA QUAY / WATERFRONT</span><span>◉ SIGNAL ACQUIRED</span></div>
+<div class="vista" aria-hidden="true"><video id="waterfront" muted playsinline preload="none" poster="media/vanta-quay.png"></video></div>
+<div class="frame" aria-hidden="true"></div>
+<div class="inner">
+<p class="eyebrow signal"><i aria-hidden="true"></i> SIGNAL LOCKED <span> / </span> VANTA QUAY</p>
+<svg class="sigil" width="124" height="94" viewBox="0 0 124 94" fill="none" aria-hidden="true"><circle cx="62" cy="47" r="36" stroke="currentColor" stroke-dasharray="2 5"/><path d="M62 3 102 47 62 91 22 47Z M62 18 83 47 62 76 41 47Z M62 3V91 M7 47H44 M80 47H117" stroke="currentColor"/><path d="M62 36 72 47 62 58 52 47Z" fill="currentColor"/></svg>
+<h1 id="title">Hollow <em>Meridian</em></h1>
+<p class="lead">The machines turned on us.<br>Someone is still sending the signal.</p>
+<a class="button" href="#trailer"><b aria-hidden="true">▷</b> Watch the trailer <span>01:00</span></a>
+<p class="platform">A CYBERPUNK JRPG IN DEVELOPMENT FOR PC</p>
+</div>
+<div class="telemetry"><button id="motion-toggle" type="button" hidden>PAUSE BACKDROP</button><a href="#world">EXPLORE THE WORLD ↓</a></div>
 </section>
 <section class="section" id="trailer">
 <p class="eyebrow">01 / GAMEPLAY TRAILER</p><h2>Follow the signal<span>.</span></h2>
@@ -28,5 +34,34 @@
 </section>
 </main>
 <footer><span>HOLLOW MERIDIAN</span><span>Chaotic Zen Games · In development for PC</span></footer>
+<script>
+const vista = document.querySelector('#waterfront');
+const motion = matchMedia('(prefers-reduced-motion: reduce)');
+let near = true;
+let started = false;
+let paused = false;
+const toggle = document.querySelector('#motion-toggle');
+toggle.addEventListener('click', () => {
+  paused = !paused;
+  toggle.textContent = paused ? 'PLAY BACKDROP' : 'PAUSE BACKDROP';
+  syncVista();
+});
+function syncVista() {
+  toggle.hidden = motion.matches;
+  if (motion.matches || paused || !near || document.hidden) { vista.pause(); return; }
+  if (!started) {
+    started = true;
+    vista.addEventListener('loadedmetadata', () => { vista.currentTime = 5.5; syncVista(); }, {once:true});
+    vista.src = 'media/trailer.mp4';
+    return;
+  }
+  if (vista.readyState) vista.play().catch(() => {});
+}
+vista.addEventListener('timeupdate', () => { if (vista.currentTime >= 8.8) vista.currentTime = 5.5; });
+vista.addEventListener('playing', () => vista.classList.add('playing'));
+new IntersectionObserver(([entry]) => { near = entry.isIntersecting; syncVista(); }).observe(vista);
+motion.addEventListener('change', syncVista);
+document.addEventListener('visibilitychange', syncVista);
+</script>
 </body>
 </html>
