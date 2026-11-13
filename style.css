@@ -45,3 +45,14 @@ body{background:var(--bg)}
 .launch{width:100%;min-height:clamp(35rem,80svh,56rem);grid-template-columns:minmax(0,78rem);padding:clamp(3rem,8vw,7rem) max(5vw,1rem);background:linear-gradient(90deg,#18353ee8 0%,#18353e80 43%,transparent 75%),linear-gradient(0deg,var(--bg),transparent 26%),url(media/quay-blue-hour.webp) center/cover}
 .launch .launch-art{display:none}
 @media(max-width:750px){.launch{width:100%;min-height:35rem;align-items:end;background:linear-gradient(0deg,#18353efa 0%,#18353ead 48%,transparent 84%),url(media/quay-blue-hour.webp) 68% center/cover}}
+
+/* Painted harbor: ink blue water, slate plaster, and lantern gold. */
+:root{--bg:#2c4650;--top:#243b46;--panel:#35545c;--text:#fff1df;--muted:#d5e1df;--accent:#f7c48c;--line:#b0c8c45c}
+body{background:radial-gradient(ellipse at 86% 20%,#46636666,transparent 40rem),linear-gradient(155deg,#304c58,#2c4650 55%,#38545a)}
+.mast{background:var(--top);border-bottom:1px solid #c9a37880}.brand .monogram{border-color:#e4b47f9c;color:var(--accent)}
+nav a[aria-current]{color:var(--accent)}.primary{background:#f1be86;color:#253940}.guide-grid a,.screen,.story-art{background:var(--panel);border-color:var(--line)}.screenbar{background:#29424b;color:var(--accent)}
+.label,.eyebrow,figcaption{color:var(--accent)}.specs{border-color:#c9a37865}.guide-grid a div{border-top:1px solid #c9a37880}
+.scene-strip{height:clamp(11rem,24vw,21rem);background:linear-gradient(0deg,#304c58,transparent 72%),var(--scene,url(media/quay-blue-hour.webp)) center var(--scene-y,52%)/cover;border-bottom:1px solid #c9a37855}
+.page-world{--scene:url(media/asterion.jpg);--scene-y:42%}.page-combat{--scene:url(media/battle.jpg);--scene-y:45%}
+.interior{padding-top:clamp(1.8rem,4vw,3.5rem)}.interior h1{max-width:20ch}.plot-chapters section{border-color:#c9a37865}.plot-chapters h2{color:#fbe0bc}
+@media(max-width:590px){.scene-strip{height:10rem;background-position:center,center var(--scene-y,52%)}}
