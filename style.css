@@ -30,3 +30,13 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spac
 .primary{border-radius:0;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%)}
 .guide-grid a{border-radius:0}.guide-grid a div{border-top:2px solid var(--accent)}
 @media(max-width:650px){.launch{min-height:34rem;align-items:end;padding-bottom:4rem}.launch::after{background:linear-gradient(0deg,#27343e 4%,#243440e8 43%,#24344014 100%)}.launch-art img{object-position:61% center}.launch-copy{padding-bottom:0}.launch-art figcaption{font-size:.54rem}}
+
+/* Solid harbor palette and freestanding artwork */
+:root{--bg:#263b3b;--top:#2b4140;--panel:#324b48;--text:#f8eee0;--muted:#d1ded7;--accent:#f1c38d}
+body{background:var(--bg)}
+.launch{width:min(calc(100% - 3rem),78rem);min-height:0;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.5rem,4vw,4rem);padding:clamp(2.5rem,7vw,5rem) 0;align-items:center}
+.launch::after{display:none}
+.launch-copy{padding:0}.launch-art{position:static;z-index:auto;background:var(--panel);border:1px solid var(--line)}
+.launch-art img{height:auto;aspect-ratio:1.5;object-position:center;object-fit:cover}.launch-art figcaption{position:static;background:var(--panel);border-top:1px solid var(--line)}
+.plot-heading{max-width:48rem}.story-art{margin:2rem 0;border:1px solid var(--line);background:var(--panel)}.plot .story-art img{margin:0;border:0;border-radius:0;aspect-ratio:2.2;object-fit:cover}.story-art figcaption{padding:.65rem 1rem}.plot-chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem;margin:2.4rem 0}.plot-chapters section{border-top:1px solid var(--line);padding-top:1rem}.plot-chapters h2{font-size:clamp(1.65rem,3vw,2.65rem)}
+@media(max-width:750px){.launch,.plot-chapters{grid-template-columns:minmax(0,1fr)}.launch{width:calc(100% - 2rem)}.plot .story-art img{aspect-ratio:1.5}}
