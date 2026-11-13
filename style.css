@@ -76,3 +76,13 @@ nav a[aria-current]{color:var(--accent)}.primary{background:#f1be86;color:#25394
 .chapter-hero h1{margin:0;color:#fff3e0;text-shadow:0 2px 18px #182d36}.chapter-hero .eyebrow{color:#ffd2a0;text-transform:uppercase}
 .page-story .chapter-hero{--scene-y:66%}.page-trailer .chapter-hero{--scene:url(media/vanta-quay.png);--scene-y:43%;border-bottom-color:#83c8bd}.page-world .chapter-hero{border-bottom-color:#d0a477}.page-combat .chapter-hero{border-bottom-color:#d38771}
 @media(max-width:650px){.chapter-hero{min-height:15rem;padding-block:2rem;background-position:center,center,62% var(--scene-y,52%)}}
+
+/* A wash of the harbor painting carries through the whole page. */
+body{background-color:#294550;background-image:linear-gradient(115deg,#26424df5,#344954eb 55%,#34414cea),url(media/quay-blue-hour.webp);background-size:cover;background-position:center top}
+.mast{background:linear-gradient(90deg,#253c47f5,#253c47e8),url(media/quay-blue-hour.webp) center 38%/cover}
+.chapter-hero{min-height:clamp(17rem,37vw,32rem);background-image:linear-gradient(90deg,#233b47dd,transparent 78%),linear-gradient(0deg,#243b47e8,transparent 67%),var(--scene,url(media/quay-blue-hour.webp));background-position:center,center,center var(--scene-y,52%)}
+.page-trailer .chapter-hero{--scene:url(media/trailer-painted.webp);--scene-y:48%}
+.page-world .chapter-hero{--scene:url(media/world-painted.webp);--scene-y:48%}
+.page-combat .chapter-hero{--scene:url(media/combat-painted.webp);--scene-y:50%}
+.interior{background:#26424ced;padding-inline:clamp(1rem,4vw,3.5rem);border-inline:1px solid var(--line)}
+@media(max-width:650px){.chapter-hero{min-height:17rem;background-position:center,center,62% var(--scene-y,52%)}}
