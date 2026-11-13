@@ -71,3 +71,8 @@ nav a[aria-current]{color:var(--accent)}.primary{background:#f1be86;color:#25394
 .studio-logo{display:inline-flex;align-items:center}.studio-logo img{display:block;width:9rem;height:auto}footer{align-items:center}
 @media(max-width:720px){.story-feature,.gameplay-grid{grid-template-columns:minmax(0,1fr)}.story-feature figure{min-height:0;aspect-ratio:16/9}}
 @media(prefers-reduced-motion:reduce){.gameplay-grid img{transition:none}}
+
+.chapter-hero{display:grid;align-items:end;min-height:clamp(15rem,34vw,28rem);padding-block:3rem;background:linear-gradient(90deg,#203742f2,#20374270 54%,transparent),linear-gradient(0deg,#243e48,transparent 65%),var(--scene,url(media/quay-blue-hour.webp)) center var(--scene-y,52%)/cover;border-bottom:1px solid var(--line)}
+.chapter-hero h1{margin:0;color:#fff3e0;text-shadow:0 2px 18px #182d36}.chapter-hero .eyebrow{color:#ffd2a0;text-transform:uppercase}
+.page-story .chapter-hero{--scene-y:66%}.page-trailer .chapter-hero{--scene:url(media/vanta-quay.png);--scene-y:43%;border-bottom-color:#83c8bd}.page-world .chapter-hero{border-bottom-color:#d0a477}.page-combat .chapter-hero{border-bottom-color:#d38771}
+@media(max-width:650px){.chapter-hero{min-height:15rem;padding-block:2rem;background-position:center,center,62% var(--scene-y,52%)}}
