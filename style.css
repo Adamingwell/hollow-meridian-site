@@ -40,3 +40,8 @@ body{background:var(--bg)}
 .launch-art img{height:auto;aspect-ratio:1.5;object-position:center;object-fit:cover}.launch-art figcaption{position:static;background:var(--panel);border-top:1px solid var(--line)}
 .plot-heading{max-width:48rem}.story-art{margin:2rem 0;border:1px solid var(--line);background:var(--panel)}.plot .story-art img{margin:0;border:0;border-radius:0;aspect-ratio:2.2;object-fit:cover}.story-art figcaption{padding:.65rem 1rem}.plot-chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 3rem;margin:2.4rem 0}.plot-chapters section{border-top:1px solid var(--line);padding-top:1rem}.plot-chapters h2{font-size:clamp(1.65rem,3vw,2.65rem)}
 @media(max-width:750px){.launch,.plot-chapters{grid-template-columns:minmax(0,1fr)}.launch{width:calc(100% - 2rem)}.plot .story-art img{aspect-ratio:1.5}}
+
+/* Painted Vanta Quay: keep the illustration behind the opening only. */
+.launch{width:100%;min-height:clamp(35rem,80svh,56rem);grid-template-columns:minmax(0,78rem);padding:clamp(3rem,8vw,7rem) max(5vw,1rem);background:linear-gradient(90deg,#18353ee8 0%,#18353e80 43%,transparent 75%),linear-gradient(0deg,var(--bg),transparent 26%),url(media/quay-blue-hour.webp) center/cover}
+.launch .launch-art{display:none}
+@media(max-width:750px){.launch{width:100%;min-height:35rem;align-items:end;background:linear-gradient(0deg,#18353efa 0%,#18353ead 48%,transparent 84%),url(media/quay-blue-hour.webp) 68% center/cover}}
